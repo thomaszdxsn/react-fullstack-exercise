@@ -70,46 +70,46 @@ Flow 的状态：
 ```
 erDiagram
 	MetaForm {
-		id		int
+		id	int
 		name	string
 	}
 	
 	MetaFormField {
-		id				  int
+		id		int
 		metaFormId	int
-		label			  string
-		type			  enum
-		required	  boolean
-		min?			  int
-		max?			  int
+		label		string
+		type		enum
+		required	boolean
+		min?		int
+		max?		int
 	}
 	
 	MetaFlow {
-		id				  int
+		id		int
 		metaFormId	int
 		returnable	boolean
 		rejectable	boolean
-		index				int
-		byType			enum
-		byId				id
+		index		int
+		byType		enum
+		byId		id
 	}
 	
 	Form {
-		id				  int
+		id		int
 		metaFormId	int
 		registerId	int
 	}
 	
 	FormAction {
-		id				int
+		id		int
 		formId		int
 		flowId		int
-		op				enum
-		createdAt datetime
-		data?			json
-		meta?			json
-		comment?  text
-		file?			blob
+		op		enum
+		createdAt 	datetime
+		data?		json
+		meta?		json
+		comment?  	text
+		file?		blob
 	}
 ```
 
