@@ -67,40 +67,44 @@ Flow 的状态：
 
 ## 数据表设计
 
-```mermaid
+```
 erDiagram
 	MetaForm {
 		id		int
 		name	string
 	}
+	
 	MetaFormField {
 		id				  int
 		metaFormId	int
 		label			  string
-		type			  text | date | datetime | number | file
+		type			  enum
 		required	  boolean
 		min?			  int
 		max?			  int
 	}
+	
 	MetaFlow {
 		id				  int
 		metaFormId	int
 		returnable	boolean
 		rejectable	boolean
 		index				int
-		byType			role | person
+		byType			enum
 		byId				id
 	}
+	
 	Form {
 		id				  int
 		metaFormId	int
 		registerId	int
 	}
+	
 	FormAction {
 		id				int
 		formId		int
 		flowId		int
-		op				next | return | rejected
+		op				enum
 		createdAt datetime
 		data?			json
 		meta?			json
